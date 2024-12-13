@@ -12,11 +12,11 @@ import net.minecraft.util.Identifier;
 import net.ranold.rpg.RanoldsPaleGarden;
 
 public class ModEffects {
-    public static final RegistryEntry<StatusEffect> ROOTED = registerStatusEffect(name: "rooted",
-        new RootedEffect(StatusEffectCategory.NEUTRAL, color: 0x36ebab)
-                    .Attributes(EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                                Identifier.of(RanoldsPaleGarden.MOD_ID, path: "rooted"), amount-0.25f),
-                                EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+    public static final RegistryEntry<StatusEffect> ROOTED = registerStatusEffect("rooted",
+        new RootedEffect(StatusEffectCategory.NEUTRAL, 0xe78725)
+                    .addAttributeModifier(EntityAttributes.MOVEMENT_SPEED,
+                                Identifier.of(RanoldsPaleGarden.MOD_ID,"rooted"),-0.25f, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+    );
 
 
     private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
